@@ -3,6 +3,7 @@ package ratios
 // CurrentRatio divides a company's current assets buy their current liaibilites.
 //
 // A current ratio > 1 means that a company is capable of paying off its short term debts.
+//
 // Current assets: cash or inventory a company wishes to turn in to cash
 // in the next 12 months.
 //
