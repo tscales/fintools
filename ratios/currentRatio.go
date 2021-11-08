@@ -11,6 +11,9 @@ package ratios
 // this can include loans, rent, payroll, and taxes.
 
 // You can find these numbers on a company's balance sheet
-func CurrentRatio(assets float32, liabilities float32) float32 {
-	return assets / liabilities
+func CurrentRatio(assets float32, liabilities float32) (float32, error) {
+	if liabilities == 0 {
+		return 0.0, ErrDivideByZero
+	}
+	return assets / liabilities, nil
 }

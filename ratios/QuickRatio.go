@@ -4,6 +4,9 @@ package ratios
 //
 // Inventory is one of the least liquid assets a company owns. Subtracting it
 // from other assets gives a better picture of just how quickly a company can pay debts.
-func QuickRatio(assets float32, inventory float32, liabilities float32) float32 {
-	return (assets - inventory) / liabilities
+func QuickRatio(assets float32, inventory float32, liabilities float32) (float32, error) {
+	if liabilities == 0 {
+		return 0.0, ErrDivideByZero
+	}
+	return (assets - inventory) / liabilities, nil
 }
